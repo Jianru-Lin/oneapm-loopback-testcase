@@ -1,0 +1,40 @@
+{
+  "name": "Gallery",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "testUser": {
+      "type": "belongsTo",
+      "model": "TestUser",
+      "foreignKey": "userId"
+    },
+    "items": {
+      "type": "hasMany",
+      "model": "Item",
+      "foreignKey": "galleryId"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

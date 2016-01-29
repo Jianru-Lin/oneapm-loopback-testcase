@@ -1,23 +1,24 @@
 {
-  "name": "Person",
-  "plural": "People",
+  "name": "Item",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "firstname": {
-      "type": "string",
-      "required": true
-    },
-    "lastname": {
+    "name": {
       "type": "string",
       "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "gallery": {
+      "type": "belongsTo",
+      "model": "Gallery",
+      "foreignKey": "galleryId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

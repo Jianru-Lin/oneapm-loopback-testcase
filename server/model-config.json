@@ -14,11 +14,12 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "db",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
-    "public": true
+    "public": false
   },
   "ACL": {
     "dataSource": "db",
@@ -32,7 +33,15 @@
     "dataSource": "db",
     "public": false
   },
-  "Person": {
+  "TestUser": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Gallery": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Item": {
     "dataSource": "db",
     "public": true
   }

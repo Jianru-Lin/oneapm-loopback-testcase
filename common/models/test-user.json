@@ -1,0 +1,26 @@
+{
+  "name": "TestUser",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "galleries": {
+      "type": "hasMany",
+      "model": "Gallery",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__create__galleries"
+    }
+  ],
+  "methods": {}
+}
