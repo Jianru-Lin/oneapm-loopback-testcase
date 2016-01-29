@@ -1,13 +1,7 @@
 {
   "db": {
     "name": "db",
-    "connector": "memory"
-  },
-  "mydb": {
-    "name" : "mydb",
-    "connector": "mongodb",
-    "host": "localhost",
-    "port": 27017,
-    "database": "loopback"
+    "connector": "memory",
+    "file": "db.memory.json"
   }
 }

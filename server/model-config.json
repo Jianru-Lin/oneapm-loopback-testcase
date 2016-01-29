@@ -32,8 +32,8 @@
     "dataSource": "db",
     "public": false
   },
-  "person": {
-    "dataSource": "mydb",
+  "Person": {
+    "dataSource": "db",
     "public": true
   }
 }
