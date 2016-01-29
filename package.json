@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
+    "dev": "pm2 start ecosystem.json",
     "start": "node .",
     "pretest": "jshint ."
   },

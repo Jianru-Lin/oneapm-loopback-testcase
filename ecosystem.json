@@ -1,0 +1,10 @@
+{
+  "apps" : [
+    {
+      "name"  : "testcase",
+      "script": "server/server.js",
+      "watch" : true,
+      "ignore_watch" : ["node_modules", "./*.log", "./*.json"],
+    }
+  ]
+}
