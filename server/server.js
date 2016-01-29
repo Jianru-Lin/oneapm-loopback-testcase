@@ -1,11 +1,8 @@
-require( 'oneapm' )
+require( 'oneapm' );
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
-
-app.use( loopback.rest() );
-
 
 app.start = function() {
   // start the web server
