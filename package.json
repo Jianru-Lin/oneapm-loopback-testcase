@@ -1,11 +1,11 @@
 {
-  "name": "hello-world",
+  "name": "oneapm-loopback-testcase",
+  "description": "A testcase of OneAPM Ai agent in Loopback framework",
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
-    "dev": "pm2 start ecosystem.json",
-    "start": "node .",
-    "pretest": "jshint ."
+    "dev": "pm2-dev ecosystem.json",
+    "test": "jake test"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -19,11 +19,13 @@
     "serve-favicon": "^2.0.1"
   },
   "devDependencies": {
-    "jshint": "^2.5.6"
+    "jake": "^8.0.12",
+    "jshint": "^2.5.6",
+    "needle": "^0.11.0",
+    "pm2": "^1.0.0"
   },
   "repository": {
     "type": "",
     "url": ""
-  },
-  "description": "hello-world"
+  }
 }
