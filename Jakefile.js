@@ -3,24 +3,14 @@ var needle = require('needle');
 var spawn  = require('child_process').spawn;
 
 task('test', { async: true }, function() {
-  test(true, function() {
-    test(false, complete);
+  test(false, false, function() {
+    test(true, false, function() {
+      test(true, true, complete);
+    });
   });
 });
 
-namespace('test', function() {
-  desc('Test with oneapm');
-  task('with_oneapm', { async: true }, function() {
-    test(true, complete);
-  });
-
-  desc('Test without oneapm');
-  task('without_oneapm', function() {
-    test(false, complete);
-  });
-});
-
-function test(oneapmEnabled, done) {
+function test(oneapmEnabled, insideContext, done) {
   var env = process.env;
   env.ONEAPM_ENABLED = oneapmEnabled;
   console.log('=====================');
@@ -56,7 +46,8 @@ function test(oneapmEnabled, done) {
 
             var gallery = res.body;
             needle.post('http://0.0.0.0:3000/api/Galleries/' + gallery.id + '/items?access_token=' + accessToken.id, {
-              name: 'item'
+              name: 'item',
+              createdInContext: insideContext
             }, { accept: 'application/json' }, function(err, res) {
               assert.equal(null, err);
 
